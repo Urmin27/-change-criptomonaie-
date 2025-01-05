@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire d'Inscription</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .form-container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-container h3 {
+            text-align: center;
+            color: #007bff;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        select, input[type="text"], input[type="file"], button {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h3>RETRAIT @ MOBILE MONEY </h3>
+    <form id="formulaire">
+        <div class="form-group">
+            <label for="portefeuille">Inona ny portefeuille anao?</label>
+            <select id="portefeuille" name="portefeuille">
+                <option value="BINANCE">BINANCE</option>
+                <option value="PAYEER">PAYEER</option>
+                <option value="FAUCETEPAY">FAUCETEPAY</option>
+                <option value="TRUST WALLET">TRUST WALLET</option>
+                <option value="E-WALLET">E-WALLET</option>
+                <option value="AUTRES">PorteFeuille hafa</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="montant">Firy ny montant tinao atao dépôt?</label>
+            <input type="text" id="montant" name="montant" placeholder="Ex: 12">
+        </div>
+        <div class="form-group">
+            <label for="reseau">Réseau cripto</label>
+            <select id="reseau" name="reseau">
+                <option value="BEP20">BEP20</option>
+                <option value="TRC20">TRC20</option>
+                <option value="ERC20">ERC20</option>
+                <option value="SOLANA">Solana</option>
+                <option value="POLYGON">Polygon</option>
+                <option value="AUTRES">Réseau hafa</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="adresse">Adresse du dépôt</label>
+            <select id="adresse" name="adresse">
+                <option value="P1114188343">PAYEER : P1114188343</option>
+                <option value="Horlandobe@gmail.com">FAUCETEPAY : Horlandobe@gmail.com</option>
+                <option value="jeanoddylon@gmail.com">BINANCE : jeanoddylon@gmail.com</option>
+                <option value="TRON:0xC041De84E2a8FF27554382211a68ad08CF110A7a">TRON : 0xC041De84E2a8FF27554382211a68ad08CF110A7a</option>
+                <option value="USDT TRC20:TAEyCaqCX7vmshTiAtL1VWG4Ti3eDsZpkT">USDT TRC20 : TAEyCaqCX7vmshTiAtL1VWG4Ti3eDsZpkT</option>
+                <option value="USDT BEP20:0xC041De84E2a8FF27554382211a68ad08CF110A7a">USDT BEP20 : 0xC041De84E2a8FF27554382211a68ad08CF110A7a</option>
+                <option value="BTC:bc1qs6prdsd9r4qv996tmqa5h2r5esrprak28kwsgs">BTC : bc1qs6prdsd9r4qv996tmqa5h2r5esrprak28kwsgs</option>
+                <option value="ETH:0xC041De84E2a8FF27554382211a68ad08CF110A7a">ETH : 0xC041De84E2a8FF27554382211a68ad08CF110A7a</option>
+                <option value="POLYGON:0xC041De84E2a8FF27554382211a68ad08CF110A7a">POLYGON : 0xC041De84E2a8FF27554382211a68ad08CF110A7a</option>
+                <option value="AUTRES">Portefeuille électronique hafa</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="whatsapp">Numéro WhatsApp:</label>
+            <input type="text" id="whatsapp" name="whatsapp" placeholder="Ex: +261323911654">
+        </div>
+        
+        <div class="form-group">
+            <label for="whatsapp">preuve du paiment :</label>
+            <input type="text" id="whatsapp" name="whatsapp" placeholder="Ex: alefaso eto ny adresse nandefa ilay vola.">
+        </div>
+        
+        <button type="submit">Envoyer</button>
+    </form>
+</div>
+
+<script>
+    document.getElementById('formulaire').addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const portefeuille = document.getElementById('portefeuille').value;
+        const montant = document.getElementById('montant').value;
+        const reseau = document.getElementById('reseau').value;
+        const adresse = document.getElementById('adresse').value;
+        const whatsapp = document.getElementById('whatsapp').value;
+
+        const message = `Formulaire d'Inscription\n\nPortefeuille: ${portefeuille}\nMontant: ${montant}\nRéseau: ${reseau}\nAdresse du dépôt: ${adresse}\nNuméro WhatsApp: ${whatsapp}`;
+
+        const url = `https://wa.me/+261323911654?text=${encodeURIComponent(message)}`;
+
+        window.open(url, '_blank');
+    });
+</script>
+
+</body>
+</html>
